@@ -62,7 +62,6 @@ public class Book {
         this.publishingDate = publishingDate;
     }
 
-    // toString for debugging
     @Override
     public String toString() {
         return "Book{id=" + id + ", title='" + title + "', genre='" + genre + "', publishingDateId=" + 

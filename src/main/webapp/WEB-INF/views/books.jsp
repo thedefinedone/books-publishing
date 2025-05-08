@@ -29,7 +29,7 @@
             <tr>
                 <td>${book.title}</td>
                 <td>${book.genre}</td>
-                <td>${book.publishingDate != null ? book.publishingDate.date : "No Date Assigned"}</td> <!-- ✅ Prevents NullPointerException -->
+                <td>${book.publishingDate != null ? book.publishingDate.date : "No Date Assigned"}</td>
             </tr>
         </c:forEach>
     </table>
@@ -56,8 +56,7 @@
             </c:forEach>
         </select>
 
-        <!-- ✅ CSRF token (only if Spring Security is enabled) -->
-        <c:if test="${not empty _csrf}">
+                <c:if test="${not empty _csrf}">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         </c:if>
 

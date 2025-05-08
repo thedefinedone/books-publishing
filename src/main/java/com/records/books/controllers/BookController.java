@@ -14,9 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.time.LocalDate;
 import java.util.List;
 
-/**
- * Controller for managing Book entities.
- */
+
 @Controller
 @RequestMapping("/books")
 public class BookController {
@@ -29,18 +27,14 @@ public class BookController {
         this.publishingDateService = publishingDateService;
     }
 
-    /** 
-     * Displays the list of all books.
-     */
+    
     @GetMapping
     public String listBooks(Model model) {
         model.addAttribute("books", bookService.getAllBooks());
         return "books";
     }
 
-    /** 
-     * Displays the form to add a new book.
-     */
+   
     @GetMapping("/add")
     public String showAddBookForm(Model model) {
         model.addAttribute("book", new Book());
@@ -48,9 +42,6 @@ public class BookController {
         return "books-form";
     }
 
-    /** 
-     * Adds a new book with validation and error handling.
-     */
     @PostMapping("/add")
     public String addBook(
             @Valid @ModelAttribute("book") Book book,
@@ -80,9 +71,6 @@ public class BookController {
         return "redirect:/books";
     }
 
-    /** 
-     * Updates the title of an existing book with validation.
-     */
     @PostMapping("/updateBookTitle")
     public String updateBookTitle(
             @RequestParam Long bookId,
@@ -104,9 +92,6 @@ public class BookController {
         return "redirect:/books";
     }
 
-    /** 
-     * Displays books associated with a specific publishing date.
-     */
     @GetMapping("/books-by-date")
     public String getBooksByDate(
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,

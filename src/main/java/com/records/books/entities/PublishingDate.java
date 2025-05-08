@@ -52,7 +52,7 @@ public class PublishingDate {
         this.books = books;
     }
 
-    // toString for debugging
+    
     @Override
 public String toString() {
     return "PublishingDate{id=" + id + ", date=" + date + "}";

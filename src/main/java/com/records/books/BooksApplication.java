@@ -15,7 +15,7 @@ public class BooksApplication {
     public static void main(String[] args) {
         SpringApplication.run(BooksApplication.class, args);
         
-        // Logging startup time
+        
         String startupTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         logger.info("✅ Books And Publishing Records Application Started Successfully at {}", startupTime);
     }

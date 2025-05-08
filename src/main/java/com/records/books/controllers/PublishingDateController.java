@@ -17,9 +17,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Controller for managing PublishingDate entities.
- */
 @Controller
 @RequestMapping("/publishingDates")
 public class PublishingDateController {
@@ -32,13 +29,7 @@ public class PublishingDateController {
         this.bookRepository = bookRepository;
     }
 
-    /**
-     * Displays the list of publishing dates and handles edit mode restoration.
-     *
-     * @param model the model to add attributes to
-     * @param session the HTTP session to store edit state
-     * @return the name of the view to render
-     */
+  
     @GetMapping
     public String listPublishingDates(Model model, HttpSession session) {
         System.out.println("Received request to list publishing dates");
@@ -80,15 +71,7 @@ public class PublishingDateController {
         return "publishing-dates";
     }
 
-    /**
-     * Displays the form to edit an existing publishing date.
-     *
-     * @param id the ID of the publishing date to edit
-     * @param model the model to add attributes to
-     * @param session the HTTP session to store edit state
-     * @param redirectAttributes attributes for redirect scenarios
-     * @return the name of the view to render, or a redirect URL
-     */
+
     @GetMapping("/edit/{id}")
     public String showEditPublishingDateForm(@PathVariable Long id, Model model, HttpSession session, RedirectAttributes redirectAttributes) {
         System.out.println("Received edit request for ID: " + id);
@@ -115,17 +98,7 @@ public class PublishingDateController {
         return "publishing-dates";
     }
 
-    /**
-     * Adds a new publishing date and associates it with the specified books.
-     *
-     * @param publishingDate the PublishingDate to add
-     * @param result the binding result for validation errors
-     * @param bookIds the IDs of the books to associate
-     * @param model the model to add attributes to
-     * @param session the HTTP session to store edit state
-     * @param redirectAttributes attributes for redirect scenarios
-     * @return the name of the view to render, or a redirect URL
-     */
+
     @PostMapping("/add")
     public String addPublishingDate(@Valid @ModelAttribute PublishingDate publishingDate, BindingResult result,
                                     @RequestParam(value = "bookIds", required = false) List<Long> bookIds, Model model, HttpSession session, RedirectAttributes redirectAttributes) {
@@ -165,17 +138,6 @@ public class PublishingDateController {
         return "redirect:/publishingDates";
     }
 
-    /**
-     * Updates an existing publishing date and associates it with the specified books.
-     *
-     * @param publishingDate the PublishingDate to update
-     * @param result the binding result for validation errors
-     * @param bookIds the IDs of the books to associate
-     * @param model the model to add attributes to
-     * @param session the HTTP session to store edit state
-     * @param redirectAttributes attributes for redirect scenarios
-     * @return the name of the view to render, or a redirect URL
-     */
     @PostMapping("/update")
     public String updatePublishingDate(@Valid @ModelAttribute PublishingDate publishingDate, BindingResult result,
                                        @RequestParam(value = "bookIds", required = false) List<Long> bookIds, Model model, HttpSession session, RedirectAttributes redirectAttributes) {
@@ -237,15 +199,7 @@ public class PublishingDateController {
         return "redirect:/publishingDates";
     }
 
-    /**
-     * Searches for a publishing date by date and displays it in edit mode if found.
-     *
-     * @param date the date to search for
-     * @param model the model to add attributes to
-     * @param session the HTTP session to store edit state
-     * @param redirectAttributes attributes for redirect scenarios
-     * @return the name of the view to render, or a redirect URL
-     */
+
     @GetMapping("/search")
     public String searchPublishingDateByDate(
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,

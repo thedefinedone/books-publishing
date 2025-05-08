@@ -22,11 +22,11 @@ public class BookService {
         bookRepository.save(book);
     }
 
-    public void updateBookTitle(Long bookId, String newTitle) {  // ✅ Allows book name edits
+    public void updateBookTitle(Long bookId, String newTitle) {  
         Optional<Book> bookOpt = bookRepository.findById(bookId);
         if (bookOpt.isPresent()) {
             Book book = bookOpt.get();
-            book.setTitle(newTitle);  // ✅ Updates book name
+            book.setTitle(newTitle);  
             bookRepository.save(book);
         }
     }

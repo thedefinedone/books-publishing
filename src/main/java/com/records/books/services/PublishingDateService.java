@@ -59,6 +59,6 @@ public interface PublishingDateService {
      * @return a list of Books associated with the publishing date, or an empty list if not found
      */
     default List<Book> getBooksByPublishingDate(LocalDate date) {
-        return Collections.emptyList(); // ✅ Ensures safe default return for missing books
+        return Collections.emptyList(); 
     }
 }

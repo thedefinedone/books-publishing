@@ -106,7 +106,6 @@
         <p class="error">${error}</p>
     </c:if>
 
-    <!-- Search Form -->
     <h2>Search Publishing Date by Date</h2>
     <form action="${pageContext.request.contextPath}/publishingDates/search" method="get">
         <div>

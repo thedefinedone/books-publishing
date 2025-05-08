@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.4.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/> 
     </parent>
     <groupId>com.records.books</groupId>
     <artifactId>books-publishing</artifactId>
@@ -33,7 +33,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
-        <!-- MySQL Driver -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
@@ -75,7 +74,6 @@
         <artifactId>spring-boot-starter-test</artifactId>
         <scope>test</scope>
         <exclusions>
-            <!-- Exclude JUnit 4 if present -->
             <exclusion>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -83,13 +81,11 @@
         </exclusions>
     </dependency>
 
-    <!-- Explicitly add JUnit 5 -->
     <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
         <scope>test</scope>
     </dependency>
-        <!-- Mockito for Testing -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
